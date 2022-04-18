@@ -85,142 +85,117 @@ const  Register=({navigation})=>{
   }
 
     return(
- <View style={styles.container}>
-      <Text style={{fontSize:30, }}>Register </Text>
-      <View style={styles.login}>
-      <Text style={styles.mlno}>Name: </Text>
+      <><View style={styles.Ellipse1} /><Text style={{ fontSize: 30, position:"absolute",alignSelf:"center", 
+      marginTop:50,
+      fontFamily: "Inter, sans-serif",
+      fontWeight: "700",
+      color: "rgba(255, 255, 255, 1)",}}>Register </Text><View style={styles.login}>
+
         <TextInput
-        textAlign='center'
-        placeholder='Name'
-        onChangeText={(text)=>{setname(text)}}
-        value={name}
+          placeholderTextColor={"black"}
+          placeholder='Name'
+          onChangeText={(text) => { setname(text); } }
+          value={name}
           style={{
-            borderRadius:10,
-            borderWidth:0,
-            
-            backgroundColor:"white",
-            width:230,
-            height:40,
-            shadowColor: 'white',
-            shadowOffset: {width: -2, height: 4},
-            shadowOpacity: 10,
-            shadowRadius: 3,
-            elevation: 6,
-            
+            borderBottomWidth: 1,
+            fontSize: 16,
+            backgroundColor: "white",
+            width: 230,
+            height: 40,
           }}
         >
 
         </TextInput>
-        <Text style={styles.mlno}>Mobile No.: </Text>
+
         <TextInput
-        textAlign='center'
-        placeholder='(Username)'
-        keyboardType="numeric"
-        onChangeText={(text)=>{setmobileno(text)}}
-        value={mobileno}
+          placeholderTextColor={"black"}
+          placeholder='Mobile No'
+          keyboardType="numeric"
+          onChangeText={(text) => { setmobileno(text); } }
+          value={mobileno}
           style={{
-            borderRadius:10,
-            borderWidth:0,
-            
-            backgroundColor:"white",
-            width:230,
-            height:40,
-            shadowColor: 'white',
-            shadowOffset: {width: -2, height: 4},
-            shadowOpacity: 10,
-            shadowRadius: 3,
-            elevation: 6,
-            
+            borderBottomWidth: 1,
+            fontSize: 16,
+            backgroundColor: "white",
+            width: 230,
+            height: 40,
           }}
         >
 
         </TextInput>
-        <Text style={styles.mlno1}>Password: </Text>
+
         <TextInput
-        textAlign='center'
-        placeholder='Password'
-        secureTextEntry={true}
-        onChangeText={(text)=>{setpassword(text)}}
-        value={password}
+          placeholderTextColor={"black"}
+          placeholder='Password'
+          secureTextEntry={true}
+          onChangeText={(text) => { setpassword(text); } }
+          value={password}
           style={{
-            borderRadius:10,
-            borderWidth:0,
-       
-            backgroundColor:"white",
-            width:230,
-            height:40,
-            shadowColor: 'white',
-            shadowOffset: {width: -2, height: 4},
-            shadowOpacity: 10,
-            shadowRadius: 3,
-            elevation: 6,
-            
-        }}
+            borderBottomWidth: 1,
+            fontSize: 16,
+            backgroundColor: "white",
+            width: 230,
+            height: 40,
+          }}
         >
-              </TextInput>
-              <Text style={styles.mlno1}>Retype Password: </Text>
-        <TextInput
-        textAlign='center'
-        placeholder='Retype Password'
-        secureTextEntry={true}
+        </TextInput>
 
-        onChangeText={(text)=>{checkpwd(text);setretypepassword(text); }}
-        value={retypepassword}
-          style={{
-            borderRadius:10,
-            borderWidth:0,
-       
-            backgroundColor:"white",
-            width:230,
-            height:40,
-            shadowColor: 'white',
-            shadowOffset: {width: -2, height: 4},
-            shadowOpacity: 10,
-            shadowRadius: 3,
-            elevation: 6,
-            
-        }}
-        ></TextInput>
-        <Text style={{color:'red' ,fontStyle:'italic',fontWeight:'bold'}}>{pwdmsg}</Text>
-        <Text style={styles.mlno1}>City: </Text>
         <TextInput
-        textAlign='center'
-        placeholder='City'
-        onChangeText={(text)=>{setcity(text); }}
-        value={city}
+          placeholderTextColor={"black"}
+          placeholder='Retype Password'
+          secureTextEntry={true}
+
+          onChangeText={(text) => { checkpwd(text); setretypepassword(text); } }
+          value={retypepassword}
           style={{
-            borderRadius:10,
-            borderWidth:0,
-       
-            backgroundColor:"white",
-            width:230,
-            height:40,
-            shadowColor: 'white',
-            shadowOffset: {width: -2, height: 4},
-            shadowOpacity: 10,
-            shadowRadius: 3,
-            elevation: 6,
-            
-        }}
+            borderBottomWidth: 1,
+            fontSize: 16,
+            backgroundColor: "white",
+            width: 230,
+            height: 40,
+          }}
+        ></TextInput>
+        <Text style={{ color: 'red', fontStyle: 'italic', fontWeight: 'bold' }}>{pwdmsg}</Text>
+
+        <TextInput
+          placeholderTextColor={"black"}
+          placeholder='City'
+          onChangeText={(text) => { setcity(text); } }
+          value={city}
+          style={{
+            borderBottomWidth: 1,
+            fontSize: 16,
+            backgroundColor: "white",
+            width: 230,
+            height: 40,
+          }}
         ></TextInput>
 
-        
-        <View style={styles.btn}>
-            <TouchableOpacity style={styles.regbtn} 
-                onPress={()=>{registerdata()}}
-                disabled={showpwdmsg}
+
+        <View>
+<Text></Text>
+          <TouchableOpacity style={styles.regbtn}
+            onPress={() => { registerdata(); } }
+            disabled={showpwdmsg}
             >
-               <Text style={{color:"white", fontSize:19}}>Register </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.clearbtn}>
-               <Text style={{color:"white", fontSize:20}}>Clear </Text>
-            </TouchableOpacity>
-        </View>
-   
-            
-      </View>
+            <Text style={{  fontSize: 20,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(255, 255, 255, 1)", }}>Sign Up </Text>
+          </TouchableOpacity>
+          <Text></Text>
+          <TouchableOpacity style={styles.clearbtn}
+          onPress={()=>{navigation.navigate('Login')}}
+          >
+            <Text style={{ color: "black", fontSize: 20,fontWeight:"bold" }}>Have Account? Login Here </Text>
+          </TouchableOpacity>
+            </View>
+        
+
+
+      </View></>
       
-    </View>
+  
   );
 }
 
@@ -236,7 +211,10 @@ const styles = StyleSheet.create({
     color:'white',
   },
   login:{
-    backgroundColor:'black',
+    backgroundColor:'white',
+    position:"absolute",
+    alignSelf:"center",
+    marginTop:100,
     justifyContent:"space-between",
     padding:50,
     borderRadius:30,
@@ -265,33 +243,32 @@ const styles = StyleSheet.create({
     
   },
   regbtn:{
-    borderColor:"orange",
+    backgroundColor:"rgba(0,180,216,1)",
     alignItems:"center",
-    borderWidth:1,
+    
     padding:10,
-    width:100,
-    alignSelf:"flex-start",
-    borderRadius:5,
+    width:230,
+    alignSelf:"center",
+    borderRadius:8,
     shadowColor: 'white',
     shadowOffset: {width: -2, height: 4},
     shadowOpacity: 10,
     shadowRadius: 3,
-    elevation: 2,
+    elevation: 6,
   },
   clearbtn:{
-    borderColor:"red",
-    alignItems:"center",
-    padding:10,
-    width:100,
-    borderWidth:1,
-    marginStart:30,
-    alignSelf:"flex-end",
-    borderRadius:5,
-    shadowColor: 'white',
-    shadowOffset: {width: -3, height: 4},
-    shadowOpacity: 10,
-    shadowRadius: 3,
-    elevation: 2,
+   
+    alignSelf:"center",
+   
+  },
+  Ellipse1: {
+    backgroundColor: "rgba(9,198,249,1)",
+    width: 807,
+    alignSelf:"center",
+    
+    height: 400,
+    borderBottomLeftRadius: 403.5,
+    borderBottomRightRadius:403.5,
   },
   forgotbtn:{
     alignItems:"center",
